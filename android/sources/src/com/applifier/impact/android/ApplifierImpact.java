@@ -31,6 +31,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.PowerManager;
+import android.util.Log;
 
 
 public class ApplifierImpact implements IApplifierImpactCacheListener, 
@@ -105,7 +106,12 @@ public class ApplifierImpact implements IApplifierImpactCacheListener,
 	/* PUBLIC METHODS */
 	
 	public void setImpactListener (IApplifierImpactListener listener) {
+		Log.d("applifier_banner","Setting listener");
 		_impactListener = listener;
+	}
+	
+	public IApplifierImpactListener getImpactListener() {
+		return this._impactListener;
 	}
 	
 	public void changeActivity (Activity activity) {
@@ -550,6 +556,10 @@ public class ApplifierImpact implements IApplifierImpactCacheListener,
 		if (webdata.initCampaigns()) {
 			_initialized = true;
 		}
+	}
+	
+	public boolean isCampaignDataInitialized() {
+		return this._impactReadySent;
 	}
 	
 	private void close () {

@@ -491,6 +491,11 @@ public class ApplifierImpactWebData {
 					ApplifierImpactProperties.ALLOW_BACK_BUTTON_SKIP = data.getInt(ApplifierImpactConstants.IMPACT_CAMPAIGN_DISABLEBACKBUTTON_KEY);
 				}
 				
+				// Check if we have banner HTML
+				if(data.has(ApplifierImpactConstants.IMPACT_CAMPAIGN_BANNER_HTML)) {
+					ApplifierImpactProperties.BANNER_URL = data.getString(ApplifierImpactConstants.IMPACT_CAMPAIGN_BANNER_HTML);
+				}
+				
 				// Parse possible multiple reward items
 				if (validData && data.has(ApplifierImpactConstants.IMPACT_REWARD_ITEMS_KEY)) {
 					JSONArray rewardItems = data.getJSONArray(ApplifierImpactConstants.IMPACT_REWARD_ITEMS_KEY);
