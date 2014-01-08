@@ -57,7 +57,7 @@
 
 - (void)dealloc {
   [ApplifierImpactDevice clearReachabilityCheck];
-  dispatch_release(self.queue);
+  //dispatch_release(self.queue);
 }
 
 - (BOOL)initWasSuccessfull {

@@ -268,7 +268,7 @@ static ApplifierImpact *sharedImpact = nil;
 
 #pragma mark - Private uncategorized
 
-- (void)notificationHandler:(id)notification {
+- (void)notificationHandler:(NSNotification*)notification {
   NSString *name = [notification name];
   AILOG_DEBUG(@"Got notification from notificationCenter: %@", name);
   

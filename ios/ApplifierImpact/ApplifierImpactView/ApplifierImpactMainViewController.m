@@ -254,7 +254,7 @@
 
 #pragma mark - Notification receivers
 
-- (void)notificationHandler: (id) notification {
+- (void)notificationHandler: (NSNotification*) notification {
   NSString *name = [notification name];
 
   AILOG_DEBUG(@"Notification: %@", name);

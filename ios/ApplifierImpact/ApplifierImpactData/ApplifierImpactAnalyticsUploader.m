@@ -15,7 +15,7 @@
 @interface ApplifierImpactAnalyticsUploader () <NSURLConnectionDelegate>
 @property (nonatomic, strong) NSMutableArray *uploadQueue;
 @property (nonatomic, strong) NSDictionary *currentUpload;
-@property (nonatomic, assign) dispatch_queue_t analyticsQueue;
+@property (nonatomic, strong) dispatch_queue_t analyticsQueue;
 @property (nonatomic, strong) NSThread *backgroundThread;
 @end
 
@@ -114,7 +114,7 @@ static ApplifierImpactAnalyticsUploader *sharedImpactAnalyticsUploader = nil;
 }
 
 - (void)dealloc {
-  dispatch_release(self.analyticsQueue);
+  //dispatch_release(self.analyticsQueue);
 }
 
 

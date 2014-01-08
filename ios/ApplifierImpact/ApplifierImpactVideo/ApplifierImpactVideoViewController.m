@@ -25,7 +25,7 @@
   @property (nonatomic, strong) UILabel *progressLabel;
   @property (nonatomic, strong) UIButton *skipLabel;
   @property (nonatomic, strong) UIView *videoOverlayView;
-  @property (nonatomic, assign) dispatch_queue_t videoControllerQueue;
+  @property (nonatomic, strong) dispatch_queue_t videoControllerQueue;
   @property (nonatomic, strong) NSURL *currentPlayingVideoUrl;
   @property (nonatomic, strong) ApplifierImpactVideoMuteButton *muteButton;
   @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
@@ -66,7 +66,7 @@
 
 - (void)dealloc {
   AILOG_DEBUG(@"dealloc");
-  dispatch_release(self.videoControllerQueue);
+  //dispatch_release(self.videoControllerQueue);
 }
 
 - (void) handleTapFrom: (UITapGestureRecognizer *)recognizer
